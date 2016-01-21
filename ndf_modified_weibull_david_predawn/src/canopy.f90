@@ -8,7 +8,7 @@
 ! Model version:                                          !
 ! ------------------------------------------------------- !
 
-!he afegit aquesta frase de prova a la línia 11 per a veure que passava. push des de l'ubuntu
+!he afegit aquesta frase de prova a la línia 11 per a veure que passava. push des de l'ubuntu; prova per pull master
 module canopy
 
   !! >this module requires a summary< !!
