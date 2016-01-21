@@ -8,7 +8,6 @@
 ! Model version:                                          !
 ! ------------------------------------------------------- !
 
-!caquins
 module canopy
 
   !! >this module requires a summary< !!
