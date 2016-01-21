@@ -1,0 +1,22 @@
+# function for plotting model residuals 
+
+mcheck = function (obj, ... ) {
+  pch = 20
+  cex=0.75
+  rs = obj$resid
+  fv = obj$fitted
+  par(mfrow=c(2,2))
+  plot(fv,rs,xlab="Fitted values",ylab="Residuals",pch=pch,cex=cex)
+  abline(h=0, lty=2,col="red")
+  qqnorm(rs,xlab="Normal scores",ylab="Ordered residuals",main="",pch=pch,cex=cex)
+  qqline(rs,lty=2,col="red")
+  #plot(rs,pch=pch,cex=cex)
+  #plot(fv,sqrt(abs(rs)),xlab="Fitted values",ylab="Square root of absolute residuals",pch=pch,cex=cex)
+  range = range(c(fv,rs+fv))
+  plot(fv,pch=pch,ylim=range,ylab="obs (red), mod (black)")
+  points(rs+fv,col="red")
+  hist(rs, breaks=50, xlab="Fitted values",ylab="density",main="",col="grey",,prob=T)
+  curve(dnorm(x,mean=mean(rs),sd=sd(rs)),add=T,lwd=2,col="red",lty=2)
+  par(mfrow=c(1,1))
+  invisible(NULL) 
+}

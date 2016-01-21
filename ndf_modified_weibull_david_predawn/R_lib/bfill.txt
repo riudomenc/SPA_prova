@@ -1,0 +1,5 @@
+bfill = function(x,y,col="darkgrey",lwd=2){
+  x = c(x, max(x), min(x))
+  y = c(y, 0, 0)
+  polygon(x, y, col=col, lwd=lwd)
+}

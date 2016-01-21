@@ -1,0 +1,1 @@
+ Time (days),sum(abspar_sun),(1.-fdiff)*par_top,(parabs_sun(i),i=1,10)

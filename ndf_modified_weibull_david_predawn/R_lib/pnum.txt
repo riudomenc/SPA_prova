@@ -1,0 +1,9 @@
+pnum = function(ppp, x){	#p=plots per page, x=nr of vars to plot
+	npp = ceiling(x/ppp)	#nr of plot pages
+	nppp = ceiling(x/npp)	#nr of plots per page
+	parmf = c(ceiling(nppp/2),2)	#input variable for pa (mfrow=parmf), indicating nr of plots per row over 2 columns
+	if (x/2-floor(x/2)==0) nppp = floor(x/npp) 
+	if (x/ppp-floor(x/ppp)==0) parmf=c(3,3)
+	if (x==17) parmf=c(3,3)
+	data.frame(rows=parmf[1], cols=parmf[2], npp=npp, nppp=nppp, nplts=x)
+}

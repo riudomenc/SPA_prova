@@ -1,0 +1,15 @@
+rebin = function( data , binsize , func , NArm=NArm ){
+  if ((func != "sum")&(func != "mean")){
+    print("Error: You must provide function, which is either 'sum' or 'mean'.")
+  }
+  else{
+  l = length(data)
+  outlength = l/binsize
+  out = 1:outlength
+  for (i in 1:outlength){
+    if (func=="sum")  out[i] = sum (data[ ( (i*binsize)-(binsize-1) ) : (i*binsize) ], na.rm=NArm)
+    if (func=="mean") out[i] = mean(data[ ( (i*binsize)-(binsize-1) ) : (i*binsize) ], na.rm=NArm)
+  }
+  out
+  }
+}
